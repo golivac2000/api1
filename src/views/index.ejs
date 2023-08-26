@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('partials/header'); -%>
+        <title>Hello World</title>
+</head>
+
+<body>
+    <div class="container p-4">
+        <div class="row">
+            <% books.forEach (function(book) { %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <%= book.title %> / <%= book.author %>
+                        </div>
+                        <img src="<%= book.image %>" class="card-img-top">
+                        <div class="card-body">
+                            <%= book.description %>
+                        </div> 
+                        <div class="card-footer">
+                            <button class="btn btn-danger">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
